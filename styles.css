@@ -22,8 +22,8 @@ h2{
     color:rgb(30, 90, 193);
 }
 #task{
-    width:15%;
-    padding: 3px;
+    width:12%;
+    padding: 5px;
   
     box-sizing:border-box;
     background-color:rgb(255, 255, 255);
@@ -45,8 +45,8 @@ table {
 
 #desc{
   
-    width:15%;
-    padding: 2px;
+    width:12%;
+    padding: 5px;
     box-sizing:border-box;
     background-color:rgb(255, 255, 255);
 }
