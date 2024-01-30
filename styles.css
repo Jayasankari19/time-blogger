@@ -1,0 +1,90 @@
+
+
+:root {
+    --background-color: #fff; /* Light mode background color */
+    --text-color: #000000eb; /* Light mode text color */
+  }
+  
+  /* Dark mode styles */
+  .dark-mode {
+    --background-color: #333; /* Dark mode background color */
+    --text-color: #fff; /* Dark mode text color */
+  }
+
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+h2{
+    text-align:center;
+    color:rgb(30, 90, 193);
+}
+#task{
+    width:15%;
+    padding: 3px;
+  
+    box-sizing:border-box;
+    background-color:rgb(255, 255, 255);
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%; 
+  }
+  
+  table, th, td {
+    border: 1px solid #090909;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+
+#desc{
+  
+    width:15%;
+    padding: 2px;
+    box-sizing:border-box;
+    background-color:rgb(255, 255, 255);
+}
+
+.entries{
+
+    max-width: 800px; /* Set your desired maximum width */
+    margin: 0 auto; /* Center the content within the container */
+    border-collapse:collapse;
+}
+.entry {
+    display: grid;
+    grid-template-columns:0.15fr 0.2fr 0.2fr;
+    align-items:center;
+}
+
+.timer-control {
+    width: fit-content;
+    border-radius: 1rem;
+    background-color: rgb(14, 109, 14);
+    color: rgb(241, 234, 234);
+    font-size: 1.25rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    cursor: pointer;
+    height: fit-content;
+   
+}
+
+.timer-control:active {
+    transform: scale(1.02);
+}
+.timer {
+    display: flex;
+    align-items: center;
+}
+.time {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+

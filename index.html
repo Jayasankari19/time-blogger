@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timeblogger</title>
+   
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+   
+  <h2>Time-Blogger</h2>
+
+  <div id="dark-mode-toggle" class="icon-container">
+    <i class="fas fa-moon"></i><br><br>
+</div>
+    <select id="task">
+        <option value="Marathon">Marathon</option>
+        <option value="Work">Work</option>
+        <option value="Gym">Gym</option>
+        <option value="Scrum meet">Scrum Meet</option>
+        <option value="Leetcode">Leetcode</option>
+    </select>
+    <br><br>
+<input type="text" id="desc" name="userdescription" placeholder="enter description">
+
+<div class="timer">
+    <div class="timer-control" id="timer-control">Start</div>
+    <p class="time" id="hour">00</p>
+    <p class="time">:</p>
+    <p class="time" id="minutes">00</p>
+    <p class="time">:</p>
+    <p class="time" id="seconds">00</p>
+</div>
+
+<div class="entries" id="entries">
+    <table>
+        <thead>
+        <tr>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody id="entries-body"></tbody>
+    </table>
+</div>  
+<!-- Add this button wherever you want -->
+
+
+
+
+</body>
+
+<script type="module" src="./timerblog.js"></script>
+</html>
