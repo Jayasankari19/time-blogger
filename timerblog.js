@@ -1,3 +1,4 @@
+
 const toggleButton = document.getElementById('dark-mode-toggle');
 let intervalId
 const start=document.getElementById('timer-control')
@@ -7,7 +8,7 @@ const hourcount=document.getElementById('hour')
 const taskInput = document.getElementById('task');
 const descriptionInput = document.getElementById('desc');
 const entTable = document.getElementById('entries');
-
+let count=0;
 
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const body = document.body;
@@ -15,7 +16,10 @@ const body = document.body;
 darkModeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
 });
-  
+
+
+
+
 let constant=0
 let taskHistory=[];
 function changetime()
@@ -60,9 +64,15 @@ function updateHours()
 start.addEventListener('click',function()
 {
     if(start.textContent==='Start'){
-        changecolor()
+        if (taskInput.value.trim() === '' || descriptionInput.value.trim() === '') {
+            // Display an alert if the input fields are empty
+            alert('Please fill in both Task and Description before starting the timer.');
+        } else {
+            changecolor();
+            intervalId = setInterval(changetime, 100);
+        }
+        
     
-        intervalId=setInterval(changetime,100)
     }
     else{
         stopTimer()
@@ -86,22 +96,24 @@ function stopTimer()
     taskInput.value=''
     descriptionInput.value=''
      
+
     timer.textContent='00'
     mincount.textContent='00'
     hourcount.textContent='00'
 
 }
 function addNewEntry(){
-   
-
+    
+    count++;
     const entryRow = document.createElement('div');
     entryRow.classList.add('entry'); 
     entryRow.innerHTML+=
-
+    
     entryRow.innerHTML = `
     <div>${taskInput.value}</div>
     <div>${descriptionInput.value}</div>
     <div>${hourcount.textContent}:${mincount.textContent}:${timer.textContent}</div>
+    
 `;
 
 entryRow.addEventListener('click', function () {
@@ -115,10 +127,21 @@ entryRow.addEventListener('click', function () {
 });
 
 entryRow.addEventListener('dblclick', function () {
+    count--;
+    console.log(`${count} left Remaining`)
     entryRow.remove();
+    updateRemainingCount();
 });
 
     entTable.appendChild(entryRow);
+    updateRemainingCount();
+    
+}
+
+function updateRemainingCount() {
+    const remainingCount = document.getElementById('remaining-count');
+    const remaining =  count; // You can adjust the count as needed
+    remainingCount.textContent = `${remaining} left remaining`;
 }
 
 
